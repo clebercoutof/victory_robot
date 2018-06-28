@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<robot name="elir_test" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="base_link">
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.025" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="zord_link0"/>
+  </joint>
+
+    <link name="zord_link0">
+    <!-- This visual represents the base body-->
+    <visual name = 'base_body'>
+      <geometry>
+        <cylinder length="0.05" radius="0.2"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision name = 'base_body'>
+      <geometry>
+        <cylinder length="0.05" radius="0.2"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+    </collision>
+    
+    </link>
+
+</robot>
