@@ -9,22 +9,22 @@
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
-    <group name="v_arm">
-        <joint name="world_base_joint" />
+    <group name="arm">
+        <joint name="virtual_joint" />
         <joint name="joint_0" />
         <joint name="joint_1" />
         <joint name="joint_2" />
         <joint name="joint_ref" />
-        <joint name="virtual_joint" />
     </group>
-    <group name="v_eef">
+    <group name="eef">
         <link name="victory_hand" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="eef_hand" parent_link="victory_ref" group="v_eef" />
+    <end_effector name="hand" parent_link="victory_ref" group="eef" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link" />
+    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="victory_link0" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="victory_hand" link2="victory_link2" reason="Never" />
     <disable_collisions link1="victory_hand" link2="victory_link3" reason="Adjacent" />
     <disable_collisions link1="victory_link0" link2="victory_link1" reason="Adjacent" />
     <disable_collisions link1="victory_link0" link2="victory_link2" reason="Never" />

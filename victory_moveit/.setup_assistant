@@ -2,10 +2,10 @@ moveit_setup_assistant_config:
   URDF:
     package: victory_description
     relative_path: urdf/victory.urdf.xacro
-    xacro_args: ""
+    xacro_args: "--inorder "
   SRDF:
     relative_path: config/elir_test.srdf
   CONFIG:
-    author_name: Cleber Couto Filho
+    author_name: cleber couto filho
     author_email: clebercoutof@gmail.com
-    generated_timestamp: 1530303706
+    generated_timestamp: 1530731282
